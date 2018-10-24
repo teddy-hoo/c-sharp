@@ -2,12 +2,26 @@
 
 namespace c_sharp {
     class Program {
+
         static void Main (string[] args) {
-            // Console.WriteLine ("Hello World!");
-            // twoSum ts = new twoSum ();
-            // int[] a = { 1, 2, 3, 4, 5 };
-            // int[] r = ts.s (a, 9);
-            // Console.WriteLine ("" + r[0] + ", " + r[1]);
+            TestCheckBST ();
+        }
+
+        static void TestCheckBST () {
+            BSTNode root = new BSTNode ();
+            root.data = 8;
+            BSTNode left = new BSTNode ();
+            left.data = 5;
+            BSTNode right = new BSTNode ();
+            right.data = 9;
+            root.left = left;
+            root.right = right;
+            CheckBST cb = new CheckBST ();
+            bool ret = cb.IsBST (root);
+            Console.WriteLine ("" + ret);
+        }
+
+        static void TestMerge () {
             MergeList ml = new MergeList ();
             Node head1 = new Node ();
             Node cursor = head1;
