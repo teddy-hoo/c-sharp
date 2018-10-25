@@ -1,10 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestCloneDoublyLinkedList ();
+            TestFlattenBT ();
+        }
+
+        static void TestFlattenBT () {
+            BTNode root = new BTNode ();
+            root.data = 2;
+            BTNode left = new BTNode ();
+            left.data = 1;
+            BTNode right = new BTNode ();
+            right.data = 3;
+            root.left = left;
+            root.right = right;
+            FlattenBT fb = new FlattenBT ();
+            fb.PrintBT (root);
+            List<BTNode> flattened = fb.Flatten (root);
+            fb.PrintFlatten (flattened);
         }
 
         static void TestCloneDoublyLinkedList () {
