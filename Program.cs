@@ -5,7 +5,15 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestFlattenBT ();
+            TestUniqueChar ();
+        }
+
+        static void TestUniqueChar () {
+            string s = "hello world";
+            UniqueCharsInString us = new UniqueCharsInString ();
+            Console.WriteLine (s);
+            string r = us.UniqueChars (s);
+            Console.WriteLine (r);
         }
 
         static void TestFlattenBT () {
