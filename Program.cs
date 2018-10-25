@@ -4,7 +4,32 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestCheckBST ();
+            TestCloneDoublyLinkedList ();
+        }
+
+        static void TestCloneDoublyLinkedList () {
+            ListNode node1 = new ListNode ();
+            node1.data = 1;
+            ListNode node2 = new ListNode ();
+            node2.data = 2;
+            ListNode node3 = new ListNode ();
+            node3.data = 3;
+            ListNode node4 = new ListNode ();
+            node4.data = 4;
+
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+
+            node1.arbitary = node3;
+            node2.arbitary = node4;
+            // node3.arbitary = node1;
+            node4.arbitary = node2;
+
+            CloneList cl = new CloneList ();
+            cl.PrintList (node1);
+            ListNode newList = cl.DoClone (node1);
+            cl.PrintList (newList);
         }
 
         static void TestCheckBST () {
