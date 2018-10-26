@@ -4,7 +4,23 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestCheckBST ();
+            // TestCheckBST ();
+            TestRecoverBST ();
+        }
+
+        static void TestRecoverBST () {
+            BSTNode root = new BSTNode ();
+            root.data = 9;
+            BSTNode left = new BSTNode ();
+            left.data = 5;
+            BSTNode right = new BSTNode ();
+            right.data = 8;
+            root.left = left;
+            root.right = right;
+            RecoverBST rb = new RecoverBST ();
+            rb.MorrisTraverse1 (root);
+            rb.Recover2 (root);
+            rb.MorrisTraverse1 (root);
         }
 
         static void TestCheckBST () {
