@@ -5,7 +5,23 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestRotatedAndSearch ();
+            TestQuickSort ();
+        }
+
+        static void TestQuickSort () {
+            List<int> numbers = new List<int> ();
+            numbers.Add (7);
+            numbers.Add (1);
+            numbers.Add (9);
+            numbers.Add (2);
+            numbers.Add (8);
+            numbers.Add (3);
+            numbers.Add (5);
+            numbers.Add (4);
+            Console.WriteLine (String.Join (", ", numbers));
+            SortAl sa = new SortAl ();
+            sa.QuickSort (ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
         }
 
         static void TestRotatedAndSearch () {
