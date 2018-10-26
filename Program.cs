@@ -5,8 +5,7 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            // TestCheckBST ();
-            TestRecoverBST ();
+            TestQuickSort ();
         }
 
         static void TestRecoverBST () {
@@ -22,7 +21,6 @@ namespace c_sharp {
             rb.MorrisTraverse1 (root);
             rb.Recover2 (root);
             rb.MorrisTraverse1 (root);
-            TestQuickSort ();
         }
 
         static void TestQuickSort () {
@@ -39,6 +37,13 @@ namespace c_sharp {
             SortAl sa = new SortAl ();
             sa.QuickSort (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
+            sa.QuickSort (ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
+            numbers.Reverse ();
+            Console.WriteLine (String.Join (", ", numbers));
+            sa.QuickSort (ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
+
         }
 
         static void TestRotatedAndSearch () {

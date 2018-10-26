@@ -14,16 +14,20 @@ namespace c_sharp {
       int cursorBegin = begin;
       int cursorEnd = end;
       while (cursorBegin < cursorEnd) {
-        while (nums[cursorEnd] >= pivot) {
+        while (cursorEnd > cursorBegin && nums[cursorEnd] >= pivot) {
           cursorEnd--;
         }
-        nums[cursorBegin] = nums[cursorEnd];
-        cursorBegin++;
-        while (nums[cursorBegin] <= pivot) {
+        if (cursorBegin != cursorEnd) {
+          nums[cursorBegin] = nums[cursorEnd];
           cursorBegin++;
         }
-        nums[cursorEnd] = nums[cursorBegin];
-        cursorEnd--;
+        while (cursorEnd > cursorBegin && nums[cursorBegin] <= pivot) {
+          cursorBegin++;
+        }
+        if (cursorBegin != cursorEnd) {
+          nums[cursorEnd] = nums[cursorBegin];
+          cursorEnd--;
+        }
       }
       nums[cursorBegin] = pivot;
       _qs (ref nums, begin, cursorBegin - 1);
