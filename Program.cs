@@ -5,7 +5,27 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestUniqueChar ();
+            TestRotatedAndSearch ();
+        }
+
+        static void TestRotatedAndSearch () {
+            List<int> numbers = new List<int> ();
+            numbers.Add (1);
+            numbers.Add (2);
+            numbers.Add (3);
+            numbers.Add (4);
+            numbers.Add (5);
+            numbers.Add (6);
+            numbers.Add (7);
+            numbers.Add (8);
+            Console.WriteLine (String.Join (", ", numbers));
+            SearchRotated sr = new SearchRotated ();
+            for (int i = 0; i < 10; i++) {
+                sr.Rotate (ref numbers, 1);
+                Console.WriteLine (String.Join (", ", numbers));
+                int pos = sr.Search (numbers, 5);
+                Console.WriteLine ("" + pos);
+            }
         }
 
         static void TestUniqueChar () {
