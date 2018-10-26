@@ -10,6 +10,12 @@ namespace c_sharp {
       if (begin >= end) {
         return;
       }
+      int pivotPost = _partition (ref nums, begin, end);
+      _qs (ref nums, begin, pivotPost - 1);
+      _qs (ref nums, pivotPost + 1, end);
+    }
+
+    private int _partition (ref List<int> nums, int begin, int end) {
       int pivot = nums[begin];
       int cursorBegin = begin;
       int cursorEnd = end;
@@ -30,8 +36,7 @@ namespace c_sharp {
         }
       }
       nums[cursorBegin] = pivot;
-      _qs (ref nums, begin, cursorBegin - 1);
-      _qs (ref nums, cursorBegin + 1, end);
+      return cursorBegin;
     }
   }
 }
