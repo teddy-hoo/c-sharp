@@ -5,7 +5,30 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestQuickSort ();
+            TestHeapSort();
+        }
+
+        static void TestHeapSort () {
+            List<int> numbers = new List<int> ();
+            numbers.Add (7);
+            numbers.Add (1);
+            numbers.Add (9);
+            numbers.Add (2);
+            numbers.Add (8);
+            numbers.Add (3);
+            numbers.Add (5);
+            numbers.Add (4);
+            Console.WriteLine (String.Join (", ", numbers));
+            HeapSort sa = new HeapSort();
+            sa.SortAl(ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
+            sa.SortAl(ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
+            numbers.Reverse ();
+            Console.WriteLine (String.Join (", ", numbers));
+            sa.SortAl(ref numbers);
+            Console.WriteLine (String.Join (", ", numbers));
+
         }
 
         static void TestRecoverBST () {
