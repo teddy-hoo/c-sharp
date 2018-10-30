@@ -5,7 +5,21 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestHeapSort();
+            TestTrieTree();
+        }
+
+        static void TestTrieTree() {
+            string[] ss = {"hello", "world", "love", "dictionary", "web", "application", "release"};
+            TrieTree tt = new TrieTree();
+            foreach (string s in ss) {
+                tt.Insert(s);
+            }
+
+            Console.WriteLine("" + tt.Exists("hello"));
+            Console.WriteLine("" + tt.Exists("web"));
+            Console.WriteLine("" + tt.Exists("fuck"));
+            Console.WriteLine("" + tt.Exists(""));
+            Console.WriteLine("" + tt.Exists(null));
         }
 
         static void TestHeapSort () {
