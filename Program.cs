@@ -5,21 +5,57 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestTrieTree();
+            TestLongestPalindromicSubstring ();
         }
 
-        static void TestTrieTree() {
-            string[] ss = {"hello", "world", "love", "dictionary", "web", "application", "release"};
-            TrieTree tt = new TrieTree();
+        static void TestLongestPalindromicSubstring () {
+            string s = "aaabbbabcdefedcba";
+            LongestPalindromicSubstring lps = new LongestPalindromicSubstring ();
+            Console.WriteLine (lps.LongestPalindrome (s));
+            Console.WriteLine (lps.LongestPalindrome (""));
+            Console.WriteLine (lps.LongestPalindrome ("a"));
+        }
+
+        static void TestTextJustification () {
+            string[] words = new string[] {
+                "Science",
+                "is",
+                "what",
+                "we",
+                "understand",
+                "well",
+                "enough",
+                "to",
+                "explain",
+                "to",
+                "a",
+                "computer.",
+                "Art",
+                "is",
+                "everything",
+                "else",
+                "we",
+                "do"
+            };
+            TextJustification tj = new TextJustification ();
+            List<string> ret = tj.Justify (words, 20);
+            foreach (string s in ret) {
+                Console.WriteLine ("\"" + s + "\"");
+            }
+        }
+
+        static void TestTrieTree () {
+            string[] ss = { "hello", "world", "love", "dictionary", "web", "application", "release" };
+            TrieTree tt = new TrieTree ();
             foreach (string s in ss) {
-                tt.Insert(s);
+                tt.Insert (s);
             }
 
-            Console.WriteLine("" + tt.Exists("hello"));
-            Console.WriteLine("" + tt.Exists("web"));
-            Console.WriteLine("" + tt.Exists("fuck"));
-            Console.WriteLine("" + tt.Exists(""));
-            Console.WriteLine("" + tt.Exists(null));
+            Console.WriteLine ("" + tt.Exists ("hello"));
+            Console.WriteLine ("" + tt.Exists ("web"));
+            Console.WriteLine ("" + tt.Exists ("fuck"));
+            Console.WriteLine ("" + tt.Exists (""));
+            Console.WriteLine ("" + tt.Exists (null));
         }
 
         static void TestHeapSort () {
@@ -33,14 +69,14 @@ namespace c_sharp {
             numbers.Add (5);
             numbers.Add (4);
             Console.WriteLine (String.Join (", ", numbers));
-            HeapSort sa = new HeapSort();
-            sa.SortAl(ref numbers);
+            HeapSort sa = new HeapSort ();
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
-            sa.SortAl(ref numbers);
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
             numbers.Reverse ();
             Console.WriteLine (String.Join (", ", numbers));
-            sa.SortAl(ref numbers);
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
 
         }
