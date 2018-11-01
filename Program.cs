@@ -5,7 +5,16 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestLongestPalindromicSubstring ();
+            TestRegularExpressoinMatching ();
+        }
+
+        static void TestRegularExpressoinMatching () {
+            RegularExpressionMatching rem = new RegularExpressionMatching ();
+            Console.WriteLine ("" + rem.IsMatch ("babad", "b.*d"));
+            Console.WriteLine ("" + rem.IsMatch ("aa", "a*"));
+            Console.WriteLine ("" + rem.IsMatch ("aa", "a"));
+            Console.WriteLine ("" + rem.IsMatch ("aab", "c*a*b"));
+            Console.WriteLine ("" + rem.IsMatch ("caab", "cx*a*b"));
         }
 
         static void TestLongestPalindromicSubstring () {
