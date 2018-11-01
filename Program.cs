@@ -5,7 +5,12 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestRegularExpressoinMatching ();
+            TestContainerWithMostWater ();
+        }
+
+        static void TestContainerWithMostWater () {
+            ContainerWithMostWater cwm = new ContainerWithMostWater ();
+            Console.WriteLine ("" + cwm.MostWater (new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
         }
 
         static void TestRegularExpressoinMatching () {
