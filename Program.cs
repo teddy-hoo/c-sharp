@@ -5,7 +5,14 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestMergeSort ();
+            TestParentheses ();
+        }
+
+        static void TestParentheses () {
+            string s = "()[]{}";
+            Parentheses pt = new Parentheses ();
+            Console.WriteLine (s);
+            Console.WriteLine ("" + pt.Valid (s));
         }
 
         static void TestMergeSort () {
