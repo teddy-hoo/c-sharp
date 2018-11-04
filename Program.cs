@@ -5,7 +5,15 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestContainerWithMostWater ();
+            TestMergeSort ();
+        }
+
+        static void TestMergeSort () {
+            int[] x = new int[] { 1, 2, 4, 3, 8, 6, 5, 7 };
+            Console.WriteLine (string.Join (" ", x));
+            MergeSrot ms = new MergeSrot ();
+            ms.MSort (ref x);
+            Console.WriteLine (string.Join (" ", x));
         }
 
         static void TestContainerWithMostWater () {
