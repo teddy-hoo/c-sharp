@@ -41,20 +41,86 @@ namespace c_sharp {
             node3.next = node4;
             newList = cl.RemoveNthFromEnd(node1, 4);
             cl.PrintList (newList);
+            TestParentheses ();
         }
 
-        static void TestTrieTree() {
-            string[] ss = {"hello", "world", "love", "dictionary", "web", "application", "release"};
-            TrieTree tt = new TrieTree();
+        static void TestParentheses () {
+            string s = "()[]{}";
+            Parentheses pt = new Parentheses ();
+            Console.WriteLine (s);
+            Console.WriteLine ("" + pt.Valid (s));
+        }
+
+        static void TestMergeSort () {
+            int[] x = new int[] { 1, 2, 4, 3, 8, 6, 5, 7 };
+            Console.WriteLine (string.Join (" ", x));
+            MergeSrot ms = new MergeSrot ();
+            ms.MSort (ref x);
+            Console.WriteLine (string.Join (" ", x));
+        }
+
+        static void TestContainerWithMostWater () {
+            ContainerWithMostWater cwm = new ContainerWithMostWater ();
+            Console.WriteLine ("" + cwm.MostWater (new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
+        }
+
+        static void TestRegularExpressoinMatching () {
+            RegularExpressionMatching rem = new RegularExpressionMatching ();
+            Console.WriteLine ("" + rem.IsMatch ("babad", "b.*d"));
+            Console.WriteLine ("" + rem.IsMatch ("aa", "a*"));
+            Console.WriteLine ("" + rem.IsMatch ("aa", "a"));
+            Console.WriteLine ("" + rem.IsMatch ("aab", "c*a*b"));
+            Console.WriteLine ("" + rem.IsMatch ("caab", "cx*a*b"));
+        }
+
+        static void TestLongestPalindromicSubstring () {
+            string s = "aaabbbabcdefedcba";
+            LongestPalindromicSubstring lps = new LongestPalindromicSubstring ();
+            Console.WriteLine (lps.LongestPalindrome (s));
+            Console.WriteLine (lps.LongestPalindrome (""));
+            Console.WriteLine (lps.LongestPalindrome ("a"));
+        }
+
+        static void TestTextJustification () {
+            string[] words = new string[] {
+                "Science",
+                "is",
+                "what",
+                "we",
+                "understand",
+                "well",
+                "enough",
+                "to",
+                "explain",
+                "to",
+                "a",
+                "computer.",
+                "Art",
+                "is",
+                "everything",
+                "else",
+                "we",
+                "do"
+            };
+            TextJustification tj = new TextJustification ();
+            List<string> ret = tj.Justify (words, 20);
+            foreach (string s in ret) {
+                Console.WriteLine ("\"" + s + "\"");
+            }
+        }
+
+        static void TestTrieTree () {
+            string[] ss = { "hello", "world", "love", "dictionary", "web", "application", "release" };
+            TrieTree tt = new TrieTree ();
             foreach (string s in ss) {
-                tt.Insert(s);
+                tt.Insert (s);
             }
 
-            Console.WriteLine("" + tt.Exists("hello"));
-            Console.WriteLine("" + tt.Exists("web"));
-            Console.WriteLine("" + tt.Exists("fuck"));
-            Console.WriteLine("" + tt.Exists(""));
-            Console.WriteLine("" + tt.Exists(null));
+            Console.WriteLine ("" + tt.Exists ("hello"));
+            Console.WriteLine ("" + tt.Exists ("web"));
+            Console.WriteLine ("" + tt.Exists ("fuck"));
+            Console.WriteLine ("" + tt.Exists (""));
+            Console.WriteLine ("" + tt.Exists (null));
         }
 
         static void TestHeapSort () {
@@ -68,14 +134,14 @@ namespace c_sharp {
             numbers.Add (5);
             numbers.Add (4);
             Console.WriteLine (String.Join (", ", numbers));
-            HeapSort sa = new HeapSort();
-            sa.SortAl(ref numbers);
+            HeapSort sa = new HeapSort ();
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
-            sa.SortAl(ref numbers);
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
             numbers.Reverse ();
             Console.WriteLine (String.Join (", ", numbers));
-            sa.SortAl(ref numbers);
+            sa.SortAl (ref numbers);
             Console.WriteLine (String.Join (", ", numbers));
 
         }
