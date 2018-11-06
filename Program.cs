@@ -5,7 +5,42 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestTrieTree();
+            TestRemoveListFromEnd();
+        }
+
+        static void TestRemoveListFromEnd() {
+            ListNode node1 = new ListNode ();
+            node1.data = 1;
+            ListNode node2 = new ListNode ();
+            node2.data = 2;
+            ListNode node3 = new ListNode ();
+            node3.data = 3;
+            ListNode node4 = new ListNode ();
+            node4.data = 4;
+
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+
+            RemoveListFromEnd cl = new RemoveListFromEnd();
+            cl.PrintList (node1);
+            ListNode newList = cl.RemoveNthFromEnd(node1, 1);
+            cl.PrintList (newList);
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            newList = cl.RemoveNthFromEnd(node1, 2);
+            cl.PrintList (newList);
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            newList = cl.RemoveNthFromEnd(node1, 3);
+            cl.PrintList (newList);
+            node1.next = node2;
+            node2.next = node3;
+            node3.next = node4;
+            newList = cl.RemoveNthFromEnd(node1, 4);
+            cl.PrintList (newList);
         }
 
         static void TestTrieTree() {
