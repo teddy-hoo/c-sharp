@@ -5,10 +5,17 @@ namespace c_sharp {
     class Program {
 
         static void Main (string[] args) {
-            TestRemoveListFromEnd();
+            TestCoinChange ();
         }
 
-        static void TestRemoveListFromEnd() {
+        static void TestCoinChange () {
+            int[] coins = new int[] { 270, 373, 487, 5, 62 };
+            CoinChange cc = new CoinChange ();
+            Console.WriteLine (cc.Change (coins, 8121));
+            Console.WriteLine (cc.DynamicChange (coins, 8121));
+        }
+
+        static void TestRemoveListFromEnd () {
             ListNode node1 = new ListNode ();
             node1.data = 1;
             ListNode node2 = new ListNode ();
@@ -22,24 +29,24 @@ namespace c_sharp {
             node2.next = node3;
             node3.next = node4;
 
-            RemoveListFromEnd cl = new RemoveListFromEnd();
+            RemoveListFromEnd cl = new RemoveListFromEnd ();
             cl.PrintList (node1);
-            ListNode newList = cl.RemoveNthFromEnd(node1, 1);
+            ListNode newList = cl.RemoveNthFromEnd (node1, 1);
             cl.PrintList (newList);
             node1.next = node2;
             node2.next = node3;
             node3.next = node4;
-            newList = cl.RemoveNthFromEnd(node1, 2);
+            newList = cl.RemoveNthFromEnd (node1, 2);
             cl.PrintList (newList);
             node1.next = node2;
             node2.next = node3;
             node3.next = node4;
-            newList = cl.RemoveNthFromEnd(node1, 3);
+            newList = cl.RemoveNthFromEnd (node1, 3);
             cl.PrintList (newList);
             node1.next = node2;
             node2.next = node3;
             node3.next = node4;
-            newList = cl.RemoveNthFromEnd(node1, 4);
+            newList = cl.RemoveNthFromEnd (node1, 4);
             cl.PrintList (newList);
             TestParentheses ();
         }
